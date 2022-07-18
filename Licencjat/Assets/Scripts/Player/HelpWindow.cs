@@ -23,9 +23,10 @@ public class HelpWindow : MonoBehaviour
             helpWindow.SetActive(isActive);
             helpShortcut.SetActive(!isActive);
         }
-        if (true)
+        if (levelComplete.activeSelf)
         {
-
+            helpWindow.SetActive(false);
+            helpShortcut.SetActive(false);
         }
         
     }

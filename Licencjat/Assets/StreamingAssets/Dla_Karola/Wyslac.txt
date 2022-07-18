@@ -5,3 +5,10 @@ Level 3 Deaths: 0 Time: 00:11
 Level 4 Deaths: 1 Time: 00:09
 Level 0 Deaths: 1 Time: 00:14
 Level 0 Deaths: 0 Time: 00:13
+Level 0 Deaths: 0 Time: 00:09
+Level 0 Deaths: 0 Time: 00:21
+Level 1 Deaths: 0 Time: 00:08
+Level 4 Deaths: 0 Time: 00:07
+Level 0 Deaths: 0 Time: 00:06
+Level 1 Deaths: 0 Time: 00:07
+Level 2 Deaths: 0 Time: 00:10
