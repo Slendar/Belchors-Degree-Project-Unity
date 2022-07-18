@@ -1,0 +1,7 @@
+Level 0 Deaths: 0 Time: 00:08
+Level 1 Deaths: 2 Time: 00:14
+Level 2 Deaths: 1 Time: 00:16
+Level 3 Deaths: 0 Time: 00:11
+Level 4 Deaths: 1 Time: 00:09
+Level 0 Deaths: 1 Time: 00:14
+Level 0 Deaths: 0 Time: 00:13

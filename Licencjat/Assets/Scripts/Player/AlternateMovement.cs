@@ -27,23 +27,23 @@ public class AlternateMovement : MonoBehaviour
         activeScene = SceneManager.GetActiveScene().buildIndex;
         switch (activeScene)
         {
-            case 0:
+            case 1:
                 controls = "Horizontal";
                 jumpControl = "Jump";
                 break;
-            case 1:
+            case 2:
                 controls = "Horizontal JL";
                 jumpControl = "Jump I";
                 break;
-            case 2:
-                controls = "Horizontal DA";
+            case 3:
+                controls = "Horizontal EQ";
                 jumpControl = "Jump S";
                 break;
-            case 3:
+            case 4:
                 controls = "Horizontal IK";
                 jumpControl = "Jump J";
                 break;
-            case 4:
+            case 5:
                 controls = "Horizontal ERShift";
                 jumpControl = "Jump LCtrl";
                 break;

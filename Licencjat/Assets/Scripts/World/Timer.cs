@@ -7,8 +7,8 @@ public class Timer : MonoBehaviour
     public AlternateMovement playerMovement;
 
     public Text timerText;
-    private float secondsCount;
-    private int minuteCount;
+    [System.NonSerialized] public float secondsCount;
+    [System.NonSerialized] public int minuteCount;
     private bool once;
 
     // Start is called before the first frame update
