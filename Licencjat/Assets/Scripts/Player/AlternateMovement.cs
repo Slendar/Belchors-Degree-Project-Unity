@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AlternateMovement : MonoBehaviour
 {
@@ -14,19 +13,48 @@ public class AlternateMovement : MonoBehaviour
     private float forceY = 0;
     private float invertGrav;
 
-    public bool canDoAction = true;
+    public bool canDoAction = false;
+
+    private int activeScene;
+    [System.NonSerialized] public string controls;
+    private string jumpControl;
 
     void Start()
     {
         // invertGrav is set greater than gravity so that our guy jumps
         invertGrav = gravity * airTime;
         controller = GetComponent<CharacterController>();
+        activeScene = SceneManager.GetActiveScene().buildIndex;
+        switch (activeScene)
+        {
+            case 0:
+                controls = "Horizontal";
+                jumpControl = "Jump";
+                break;
+            case 1:
+                controls = "Horizontal JL";
+                jumpControl = "Jump I";
+                break;
+            case 2:
+                controls = "Horizontal DA";
+                jumpControl = "Jump S";
+                break;
+            case 3:
+                controls = "Horizontal IK";
+                jumpControl = "Jump J";
+                break;
+            case 4:
+                controls = "Horizontal ERShift";
+                jumpControl = "Jump LCtrl";
+                break;
+
+        }
     }
     void Update()
     {
         if (canDoAction)
         {
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+            moveDirection = new Vector3(Input.GetAxis(controls), 0, 0);
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
             if (controller.isGrounded)
@@ -35,21 +63,19 @@ public class AlternateMovement : MonoBehaviour
                 forceY = 0;
                 // invertGrav is also reset based on the gravity
                 invertGrav = gravity * airTime;
-                if (Input.GetButtonDown("Jump"))
+                if (Input.GetButtonDown(jumpControl))
                 {
                     // we jump 
                     forceY = jumpSpeed;
-                    Debug.Log(transform.position.x);
                 }
             }
             // We are now jumping since forceY is not 0
             // we add invertGrav to our jumpForce and invertGrav is also
             // decreased so that we get a curvy jump
-            if (Input.GetButton("Jump") && forceY != 0)
+            if (Input.GetButton(jumpControl) && forceY != 0)
             {
                 invertGrav -= Time.deltaTime;
                 forceY += invertGrav * Time.deltaTime;
-                Debug.Log(transform.position.x);
             }
             // Here we apply the gravity
             forceY -= gravity * Time.deltaTime * gravityForce;

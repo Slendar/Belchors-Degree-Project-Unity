@@ -1,12 +1,10 @@
 using UnityEngine;
 
-public class teleport : MonoBehaviour
+public class Teleport : MonoBehaviour
 {
     [SerializeField] private Vector2 tpUp;
     [SerializeField] private Vector2 tpDown;
-
-    [SerializeField] private Vector3 tpCamUp;
-    [SerializeField] private Vector3 tpCamDown;
+    [SerializeField] private Vector2 tpRDown;
 
     [SerializeField] private float delay = 0.05f;
 
@@ -17,23 +15,27 @@ public class teleport : MonoBehaviour
     {
         if (hit.collider.name == "Teleport Left")
         {
-            transform.position = tpUp;
-            camOff.SetActive(false);
-            cam.transform.position = tpCamUp;
-            Invoke("setCamActive", delay);
+            tpPlayer(tpUp);
         }
         else if (hit.collider.name == "Teleport Up Left")
         {
-            transform.position = tpDown;
-            camOff.SetActive(false);
-            cam.transform.position = tpCamDown;
-            Invoke("setCamActive", delay);
+            tpPlayer(tpDown);
         }
-        
+        else if (hit.collider.name == "Teleport Up Right")
+        {
+            tpPlayer(tpRDown);
+        }
     }
 
     void setCamActive()
     {
         camOff.SetActive(true);
+    }
+
+    void tpPlayer(Vector2 tp)
+    {
+        transform.position = tp;
+        camOff.SetActive(false);
+        Invoke("setCamActive", delay);
     }
 }
