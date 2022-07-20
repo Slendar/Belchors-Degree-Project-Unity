@@ -19,6 +19,8 @@ public class AlternateMovement : MonoBehaviour
     [System.NonSerialized] public string controls;
     private string jumpControl;
 
+    public Animator animator;
+
     void Start()
     {
         // invertGrav is set greater than gravity so that our guy jumps
@@ -57,6 +59,19 @@ public class AlternateMovement : MonoBehaviour
             moveDirection = new Vector3(Input.GetAxis(controls), 0, 0);
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
+            if (moveDirection.x > 0)
+            {
+                animator.SetBool("IsMovingRight", true);
+            }
+            else if (moveDirection.x <0)
+            {
+                animator.SetBool("IsMovingLeft", true);
+            }
+            else
+            {
+                animator.SetBool("IsMovingLeft", false);
+                animator.SetBool("IsMovingRight", false);
+            }
             if (controller.isGrounded)
             {
                 // we are grounded so forceY is 0
@@ -81,6 +96,7 @@ public class AlternateMovement : MonoBehaviour
             forceY -= gravity * Time.deltaTime * gravityForce;
             moveDirection.y = forceY;
             controller.Move(moveDirection * Time.deltaTime);
+           // animator.SetFloat("IsMoving", Mathf.Abs(moveDirection.x));
         }
     }
 

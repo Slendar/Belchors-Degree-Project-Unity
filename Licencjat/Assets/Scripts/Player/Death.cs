@@ -9,6 +9,7 @@ public class Death : MonoBehaviour
     public CreateCheckpoint checkpointPos;
     public Timer time;
     public DeathsCounter deaths;
+    public Animator animator;
 
     [SerializeField] private float timeDie = 2;
 
@@ -19,6 +20,7 @@ public class Death : MonoBehaviour
             deaths.deaths++;
             movement.enabled = false;
             time.startTimer = false;
+            animator.SetBool("IsDead", true);
             
             Invoke("tpPlayer", timeDie);
         }
@@ -31,6 +33,7 @@ public class Death : MonoBehaviour
     void tpPlayer()
     {
         player.transform.position = checkpointPos.checkpoint;
+        animator.SetBool("IsDead", false);
         Invoke("movementOn", 0.1f);
     }
 }
