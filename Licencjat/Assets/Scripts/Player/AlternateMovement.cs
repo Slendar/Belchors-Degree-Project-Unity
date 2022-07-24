@@ -60,12 +60,16 @@ public class AlternateMovement : MonoBehaviour
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
             if (moveDirection.x > 0)
-            {
+            {   
+                animator.SetBool("WasMovingLeft", false);
                 animator.SetBool("IsMovingRight", true);
+                animator.SetBool("WasMovingRight", true);
             }
             else if (moveDirection.x <0)
             {
+                animator.SetBool("WasMovingRight", false);
                 animator.SetBool("IsMovingLeft", true);
+                animator.SetBool("WasMovingLeft", true);
             }
             else
             {
