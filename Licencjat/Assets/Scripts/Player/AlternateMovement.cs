@@ -23,6 +23,7 @@ public class AlternateMovement : MonoBehaviour
 
     void Start()
     {
+        animator.SetBool("WasMovingRight", true);
         // invertGrav is set greater than gravity so that our guy jumps
         invertGrav = gravity * airTime;
         controller = GetComponent<CharacterController>();
@@ -52,7 +53,7 @@ public class AlternateMovement : MonoBehaviour
 
         }
     }
-    void Update()
+    void FixedUpdate()
     {
         if (canDoAction)
         {
@@ -61,11 +62,15 @@ public class AlternateMovement : MonoBehaviour
             moveDirection *= speed;
             if (moveDirection.x > 0)
             {
+                animator.SetBool("WasMovingLeft", false);
                 animator.SetBool("IsMovingRight", true);
+                animator.SetBool("WasMovingRight", true);
             }
             else if (moveDirection.x <0)
             {
+                animator.SetBool("WasMovingRight", false);
                 animator.SetBool("IsMovingLeft", true);
+                animator.SetBool("WasMovingLeft", true);
             }
             else
             {
@@ -74,6 +79,10 @@ public class AlternateMovement : MonoBehaviour
             }
             if (controller.isGrounded)
             {
+                animator.SetBool("IsFreeFalling", false);
+                animator.SetBool("IsFalling", false);
+                animator.SetBool("IsJumping", false);
+                animator.SetBool("Jumped", false);
                 // we are grounded so forceY is 0
                 forceY = 0;
                 // invertGrav is also reset based on the gravity
@@ -81,6 +90,8 @@ public class AlternateMovement : MonoBehaviour
                 if (Input.GetButtonDown(jumpControl))
                 {
                     // we jump 
+                    animator.SetBool("IsJumping", true);
+                    animator.SetBool("Jumped", true);
                     forceY = jumpSpeed;
                 }
             }
@@ -89,6 +100,7 @@ public class AlternateMovement : MonoBehaviour
             // decreased so that we get a curvy jump
             if (Input.GetButton(jumpControl) && forceY != 0)
             {
+                //animator.SetBool("IsJumping", true);
                 invertGrav -= Time.deltaTime;
                 forceY += invertGrav * Time.deltaTime;
             }
@@ -96,7 +108,17 @@ public class AlternateMovement : MonoBehaviour
             forceY -= gravity * Time.deltaTime * gravityForce;
             moveDirection.y = forceY;
             controller.Move(moveDirection * Time.deltaTime);
-           // animator.SetFloat("IsMoving", Mathf.Abs(moveDirection.x));
+            if(!controller.isGrounded && animator.GetBool("IsJumping"))
+            {
+                Invoke("yes", 0.1f);
+            }
+            else if (!controller.isGrounded && !animator.GetBool("Jumped"))
+            {
+                animator.SetBool("IsFreeFalling", true);
+            }
+
+            
+            
         }
     }
 
@@ -124,5 +146,11 @@ public class AlternateMovement : MonoBehaviour
 
         // Apply the push
         body.velocity = pushDir * pushPower;
+    }
+
+    void yes()
+    {
+        animator.SetBool("IsJumping", false);
+        animator.SetBool("IsFalling", true);
     }
 }
