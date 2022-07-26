@@ -544,14 +544,16 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main task of the player is to reach the end of the level, that is at the
-    end of the map.
+  m_Text: 'Main task is to reach the end of the map in the shortest time.
+
+    Timer
+    starts counting after first movement control is pressed.'
 --- !u!222 &367189047
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1051,18 +1053,18 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Movement controls change after every completed level and are shown at
-    the start of the level.
+    the beggining of the level.
 
 
-    Levels visually don''t change but rules of the
-    map change and rules aren''t shown at the beginning of the level. '
+    Levels visually don''t change but the rules
+    do and they aren''t shown at the beginning of the level. '
 --- !u!222 &779674730
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1214,7 +1216,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

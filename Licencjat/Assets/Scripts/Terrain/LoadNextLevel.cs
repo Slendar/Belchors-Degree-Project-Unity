@@ -7,6 +7,7 @@ public class LoadNextLevel : MonoBehaviour
     public Timer time;
     public DeathsCounter deaths;
     public GameObject completeLevelUI;
+    public GameObject beggining;
     [System.NonSerialized] public int totalDeaths;
     [System.NonSerialized] public int totalMinutes;
     [System.NonSerialized] public float totalSeconds;
@@ -15,8 +16,8 @@ public class LoadNextLevel : MonoBehaviour
 
     private void Start()
     {
+        beggining.SetActive(true);
         Directory.CreateDirectory(Application.streamingAssetsPath + "/Dla_Karola/");
-
         createTextFile();
     }
 
