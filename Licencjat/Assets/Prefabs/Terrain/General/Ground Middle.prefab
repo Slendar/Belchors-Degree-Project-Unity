@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4664466551932268351}
-  - component: {fileID: 4664466551932268348}
-  - component: {fileID: 4664466551932268349}
+  - component: {fileID: 7648998462007696993}
+  - component: {fileID: 3871027440909803386}
   - component: {fileID: 4664466551932268346}
   m_Layer: 3
   m_Name: Ground Middle
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4664466551932268348
+--- !u!33 &7648998462007696993
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4664466551932268347}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4664466551932268349
+--- !u!23 &3871027440909803386
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8cf789259edfe1042ad99bfa32e64938, type: 2}
+  - {fileID: 2100000, guid: 3b9c59ac9c4084e4998050417290a733, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -16,3 +16,6 @@ Level 0 Deaths: 0 Time: 00:23
 Level 0 Deaths: 0 Time: 00:06
 Level 0 Deaths: 0 Time: 00:06
 Level 0 Deaths: 1 Time: 00:09
+Level 0 Deaths: 0 Time: 00:03
+Level 0 Deaths: 0 Time: 00:09
+Level 0 Deaths: 1 Time: 00:17
