@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.7341158, g: 0.68549067, b: 0.6952222, a: 1}
+  m_IndirectSpecularColor: {r: 0.5056497, g: 0.44174975, b: 0.45770484, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1174,6 +1174,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3996823505027495652, guid: 7328a94b58ec06141aeb0011e9a40ee8, type: 3}
+      propertyPath: m_Center.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996823505027495652, guid: 7328a94b58ec06141aeb0011e9a40ee8, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -1247,6 +1251,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3996823505027495675, guid: 7328a94b58ec06141aeb0011e9a40ee8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835698555438706731, guid: 7328a94b58ec06141aeb0011e9a40ee8, type: 3}
+      propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1361,7 +1369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5496153329297769597, guid: ea1bf1070600fb7428eb904e22b06fd9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.47
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 5496153329297769597, guid: ea1bf1070600fb7428eb904e22b06fd9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1849,6 +1857,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7684265975283859291, guid: 5c4aa8f2241696d498708443142c10f4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684265975283859301, guid: 5c4aa8f2241696d498708443142c10f4, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7684265976984448266, guid: 5c4aa8f2241696d498708443142c10f4, type: 3}
       propertyPath: m_Name
       value: Lava
@@ -1859,7 +1875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7684265976984448277, guid: 5c4aa8f2241696d498708443142c10f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.31
+      value: 46.5
       objectReference: {fileID: 0}
     - target: {fileID: 7684265976984448277, guid: 5c4aa8f2241696d498708443142c10f4, type: 3}
       propertyPath: m_LocalPosition.y

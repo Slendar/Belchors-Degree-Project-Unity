@@ -363,17 +363,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7024838282586443116}
     m_Modifications:
+    - target: {fileID: 6123781034356763601, guid: 33313e5da18696e40ad64386f086f290, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123781034356763601, guid: 33313e5da18696e40ad64386f086f290, type: 3}
+      propertyPath: m_Size.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123781034356763602, guid: 33313e5da18696e40ad64386f086f290, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123781034356763602, guid: 33313e5da18696e40ad64386f086f290, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123781034356763602, guid: 33313e5da18696e40ad64386f086f290, type: 3}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123781034356763602, guid: 33313e5da18696e40ad64386f086f290, type: 3}
+      propertyPath: checkpointPos
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6123781034356763614, guid: 33313e5da18696e40ad64386f086f290, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6123781034356763614, guid: 33313e5da18696e40ad64386f086f290, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.433
+      value: -0.4005
       objectReference: {fileID: 0}
     - target: {fileID: 6123781034356763614, guid: 33313e5da18696e40ad64386f086f290, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.41
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6123781034356763614, guid: 33313e5da18696e40ad64386f086f290, type: 3}
       propertyPath: m_LocalPosition.z

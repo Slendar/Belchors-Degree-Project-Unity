@@ -50,12 +50,11 @@ public class AlternateMovement : MonoBehaviour
                 controls = "Horizontal ERShift";
                 jumpControl = "Jump LCtrl";
                 break;
-
         }
     }
     void FixedUpdate()
     {
-        if (canDoAction)
+        if (true)
         {
             moveDirection = new Vector3(Input.GetAxis(controls), 0, 0);
             moveDirection = transform.TransformDirection(moveDirection);
@@ -85,9 +84,10 @@ public class AlternateMovement : MonoBehaviour
                 animator.SetBool("Jumped", false);
                 // we are grounded so forceY is 0
                 forceY = 0;
+                
                 // invertGrav is also reset based on the gravity
                 invertGrav = gravity * airTime;
-                if (Input.GetButtonDown(jumpControl))
+                if (Input.GetButton(jumpControl))
                 {
                     // we jump 
                     animator.SetBool("IsJumping", true);

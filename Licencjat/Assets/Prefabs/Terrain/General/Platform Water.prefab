@@ -61,8 +61,8 @@ MonoBehaviour:
   movement: {fileID: 0}
   player: {fileID: 0}
   checkpointPos: {fileID: 0}
-  time: {fileID: 6044882440882629624, guid: 8390102633a3248489a9a39b5cd977ba, type: 3}
-  deaths: {fileID: 8169136632279615721, guid: 1c4ea6e6d7fe4504c82623f053412b63, type: 3}
+  time: {fileID: 0}
+  deaths: {fileID: 0}
   animator: {fileID: 0}
   timeDie: 2
 --- !u!1001 &6837321739540061389
@@ -136,6 +136,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 191
       objectReference: {fileID: 0}
+    - target: {fileID: 23250622934378492, guid: da41fd2967a439d409358c2214a5409e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e2f44d83259a3c14abd33197677dbc91, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da41fd2967a439d409358c2214a5409e, type: 3}
 --- !u!4 &6840326685234427977 stripped

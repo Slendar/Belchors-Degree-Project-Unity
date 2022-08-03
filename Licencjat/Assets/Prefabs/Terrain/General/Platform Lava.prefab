@@ -112,8 +112,8 @@ MonoBehaviour:
   movement: {fileID: 0}
   player: {fileID: 0}
   checkpointPos: {fileID: 0}
-  time: {fileID: 6044882440882629624, guid: 8390102633a3248489a9a39b5cd977ba, type: 3}
-  deaths: {fileID: 8169136632279615721, guid: 1c4ea6e6d7fe4504c82623f053412b63, type: 3}
+  time: {fileID: 0}
+  deaths: {fileID: 0}
   animator: {fileID: 0}
   timeDie: 2
 --- !u!1001 &3269061055064479769
