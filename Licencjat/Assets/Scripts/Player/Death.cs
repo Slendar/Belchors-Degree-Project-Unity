@@ -22,6 +22,7 @@ public class Death : MonoBehaviour
             time.startTimer = false;
             animator.SetBool("IsDead", true);
             FindObjectOfType<AudioManager>().Play("Death");
+            FindObjectOfType<AudioManager>().Stop("Footsteps");
             
             Invoke("tpPlayer", timeDie);
         }

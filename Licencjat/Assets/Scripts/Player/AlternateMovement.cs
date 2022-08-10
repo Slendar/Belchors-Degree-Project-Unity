@@ -13,6 +13,7 @@ public class AlternateMovement : MonoBehaviour
     private float forceY = 0;
     private float invertGrav;
     private bool moving = false;
+    private bool start = true;
 
     public bool canDoAction = false;
 
@@ -64,9 +65,10 @@ public class AlternateMovement : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("Footsteps");
                 moving = true;
+                start = false;
             }
 
-            if (moveDirection.x == 0 || !controller.isGrounded)
+            if (moveDirection.x == 0 && !start || !controller.isGrounded && !start)
             {
                 FindObjectOfType<AudioManager>().Stop("Footsteps");
                 moving = false;
