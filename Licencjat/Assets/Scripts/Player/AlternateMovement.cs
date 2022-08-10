@@ -12,6 +12,7 @@ public class AlternateMovement : MonoBehaviour
     private CharacterController controller;
     private float forceY = 0;
     private float invertGrav;
+    private bool moving = false;
 
     public bool canDoAction = false;
 
@@ -59,6 +60,19 @@ public class AlternateMovement : MonoBehaviour
             moveDirection = new Vector3(Input.GetAxis(controls), 0, 0);
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
+            if (moveDirection.x != 0 && controller.isGrounded && !moving)
+            {
+                FindObjectOfType<AudioManager>().Play("Footsteps");
+                moving = true;
+            }
+
+            if (moveDirection.x == 0 || !controller.isGrounded)
+            {
+                FindObjectOfType<AudioManager>().Stop("Footsteps");
+                moving = false;
+            }
+
+
             if (moveDirection.x > 0)
             {
                 animator.SetBool("WasMovingLeft", false);
@@ -92,6 +106,7 @@ public class AlternateMovement : MonoBehaviour
                     // we jump 
                     animator.SetBool("IsJumping", true);
                     animator.SetBool("Jumped", true);
+                    FindObjectOfType<AudioManager>().Play("Jump");
                     forceY = jumpSpeed;
                 }
             }

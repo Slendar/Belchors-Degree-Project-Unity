@@ -23,6 +23,7 @@ public class LoadNextLevel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        FindObjectOfType<AudioManager>().Play("Win");
         Debug.Log("Win");
         time.startTimer = false;
         totalDeaths = deaths.deaths;

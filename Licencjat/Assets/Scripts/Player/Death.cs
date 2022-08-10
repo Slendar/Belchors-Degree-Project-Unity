@@ -21,6 +21,7 @@ public class Death : MonoBehaviour
             movement.enabled = false;
             time.startTimer = false;
             animator.SetBool("IsDead", true);
+            FindObjectOfType<AudioManager>().Play("Death");
             
             Invoke("tpPlayer", timeDie);
         }

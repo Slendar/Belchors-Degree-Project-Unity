@@ -15,14 +15,17 @@ public class Teleport : MonoBehaviour
     {
         if (hit.collider.name == "Teleport Left")
         {
+            FindObjectOfType<AudioManager>().Play("Portal");
             tpPlayer(tpUp);
         }
         else if (hit.collider.name == "Teleport Up Left")
         {
+            FindObjectOfType<AudioManager>().Play("Portal");
             tpPlayer(tpDown);
         }
         else if (hit.collider.name == "Teleport Up Right")
         {
+            FindObjectOfType<AudioManager>().Play("Portal");
             tpPlayer(tpRDown);
         }
     }
